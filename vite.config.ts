@@ -6,29 +6,32 @@ import { defineConfig } from "vite";
 import path from "path";
 
 const fileName = {
-    es: "petx.mjs",
-    cjs: "petx.cjs",
-    iife: "petx.iife.js",
+  es: "react-infinite-scroll-tiny.mjs",
+  cjs: "react-infinite-scroll-tiny.cjs",
+  iife: "react-infinite-scroll-tiny.iife.js",
 };
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    test: {
-        globals: true,
-        environment: "jsdom",
-        setupFiles: "./src/test/setup.ts",
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
+  },
+  base: "./",
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/index.tsx"),
+      name: "react-infinite-scroll-tiny",
+      formats: ["es", "cjs", "iife"],
+      fileName: (format) => fileName[format],
     },
-    base: "./",
-    build: {
-        lib: {
-            entry: path.resolve(__dirname, "src/index.tsx"),
-            name: "petx",
-            formats: ["es", "cjs", "iife"],
-            fileName: (format) => fileName[format],
-        },
-        rollupOptions: {
-            external: ["react"],
-        },
+    rollupOptions: {
+      external: ["react"],
+      output: {
+        extend: true,
+      },
     },
+  },
 });
