@@ -1,6 +1,6 @@
 {
   "name": "react-infinite-scroll-tiny",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tiny Infinite Scroll component in react like react-infinite-scroll-component",
   "main": "./dist/react-infinite-scroll-tiny.cjs",
   "module": "./dist/react-infinite-scroll-tiny.mjs",

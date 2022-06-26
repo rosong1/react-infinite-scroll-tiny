@@ -6,7 +6,7 @@ try on [stackblitz](https://stackblitz.com/edit/vitejs-vite-wsadms?file=src%2Fma
 # Install
 
 ```bash
-npm install petx
+npm install react-infinite-scroll-tiny
 ```
 
 # Usage
